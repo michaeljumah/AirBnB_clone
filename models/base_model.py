@@ -25,7 +25,7 @@ class BaseModel:
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         if len(kwargs) > 0:
-            for key, value in kwargs.items(
+            for key, value in kwargs.items():
                 """loop through the key and its corresponding value"""
                 if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, time_format)
